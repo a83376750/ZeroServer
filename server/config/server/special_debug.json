@@ -1,0 +1,70 @@
+{
+  "server_list": [
+    {
+      "service": "chat",
+      "name": "聊天",
+      "scene": [ 201 ],
+      "connect_scene": [ 301 ],
+      "log": "1111111",
+      "machine": "machine-alpha",
+      "outer_port": 11501,
+      "inner_port": 11803
+    },
+    {
+      "service": "map",
+      "name": "场景列表",
+      "scene": [
+        10101
+      ],
+      "connect_scene": [ 201, 301 ],
+      "log": "1111111",
+      "chat_scene": 201,
+      "machine": "machine-alpha",
+      "inner_port": 11901,
+      "send_thr": 2
+    },
+    {
+      "service": "map",
+      "name": "洛阳",
+      "scene": [ 10103 ],
+      "connect_scene": [ 201, 301 ],
+      "log": "1111110",
+      "chat_scene": 201,
+      "machine": "machine-alpha",
+      "inner_port": 11903,
+      "send_thr": 1
+    },
+    {
+      "service": "logic",
+      "name": "逻辑",
+      "scene": [ 101 ],
+      "connect_scene": [ 201, 301 ],
+      "log": "1111111",
+      "machine": "machine-alpha",
+      "limit_accept": 3000,
+      "inner_port": 11804,
+      "php_port": 11801
+    },
+    {
+      "service": "gate",
+      "name": "网关",
+      "scene": [ 601 ],
+      "connect_scene": [ 101, 201, 301, "scene" ],
+      "log": "1111111",
+      "machine": "machine-alpha",
+      "outer_port": 11511,
+      "limit_accept": 3000,
+      "inner_port": 11805
+    },
+    {
+      "service": "auth",
+      "name": "验证",
+      "scene": [ 701 ],
+      "connect_scene": [ 601, 301 ],
+      "log": "1111111",
+      "machine": "machine-alpha",
+      "outer_port": 11500,
+      "limit_accept": 3000
+    }
+  ]
+}

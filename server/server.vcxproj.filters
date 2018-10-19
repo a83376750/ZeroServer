@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{5b940365-8692-469f-9d23-9ec6a4eeae19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="luasrc">
+      <UniqueIdentifier>{965659fd-6d55-404e-ada9-4b2ac12ad8a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{098447b5-ce96-4fcf-86bc-f4da2be184df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{b6dbeebd-78e3-4159-8321-6e162ae3bb4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rapidjson">
+      <UniqueIdentifier>{feb49eff-1eae-4dce-8d8c-8710d7da3778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{071e6ddc-db2b-4668-899a-6842430ca7da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="message">
+      <UniqueIdentifier>{78c78c98-058a-400e-bcd7-072d8667726e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zeromq">
+      <UniqueIdentifier>{e5ac5fd6-163e-4176-a224-fa3f62bb0dcf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TimeValue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPool.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lapi.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lauxlib.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lcode.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lctype.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\ldebug.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\ldo.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lfunc.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lgc.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\llex.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\llimits.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lmem.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lobject.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lopcodes.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lparser.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lprefix.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lstate.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lstring.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\ltable.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\ltm.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lua.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lua.hpp">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\luaconf.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lualib.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lundump.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lvm.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\src\lzio.h">
+      <Filter>luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugServer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\allocators.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\cursorstreamwrapper.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\document.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\encodedstream.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\encodings.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\error\en.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\error\error.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\filereadstream.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\filewritestream.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\fwd.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\biginteger.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\diyfp.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\dtoa.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\ieee754.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\itoa.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\meta.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\pow10.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\regex.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\stack.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\strfunc.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\strtod.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\internal\swap.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\istreamwrapper.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\memorybuffer.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\memorystream.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\msinttypes\inttypes.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\msinttypes\stdint.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\ostreamwrapper.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\pointer.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\prettywriter.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\rapidjson.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\reader.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\schema.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\stream.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\stringbuffer.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="rapidjson\writer.h">
+      <Filter>rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseActor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="SpinLock.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="message\ProtoInner001.pb.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="zeromq\zmq.h">
+      <Filter>zeromq</Filter>
+    </ClInclude>
+    <ClInclude Include="zeromq\zmq_utils.h">
+      <Filter>zeromq</Filter>
+    </ClInclude>
+    <ClInclude Include="Connector.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Sender.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Reader.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TimeValue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="lua\src\lapi.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lauxlib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lbaselib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lbitlib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lcode.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lcorolib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lctype.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ldblib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ldebug.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ldo.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ldump.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lfunc.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lgc.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\linit.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\liolib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\llex.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lmathlib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lmem.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\loadlib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lobject.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lopcodes.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\loslib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lparser.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lstate.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lstring.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lstrlib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ltable.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ltablib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\ltm.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lua.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\luac.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lundump.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lutf8lib.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lvm.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\src\lzio.c">
+      <Filter>luasrc</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GameConfig.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="message\ProtoInner001.pb.cc">
+      <Filter>message</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.lua">
+      <Filter>lua</Filter>
+    </None>
+    <None Include="config\server\special_debug.json">
+      <Filter>config</Filter>
+    </None>
+  </ItemGroup>
+</Project>
