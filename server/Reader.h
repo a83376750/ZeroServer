@@ -11,6 +11,16 @@ public:
 	virtual int recv(void *out);
 };
 
+Reader::Reader()
+{
+
+}
+
+Reader::~Reader()
+{
+
+}
+
 int Reader::connect_svc(int type)
 {
 
@@ -18,5 +28,6 @@ int Reader::connect_svc(int type)
 
 int Reader::recv(void *out)
 {
-	
+	zmq_msg_t msg;
+	zmq_recv(m_socket, out)
 }

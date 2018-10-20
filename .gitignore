@@ -16,3 +16,4 @@ server/Debug/
 lua/Debug/
 Debug/
 server/lib/
+.vs/

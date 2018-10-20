@@ -59,7 +59,7 @@ struct A
 #include <mutex>
 void testObjectPool()
 {
-	ObjectPool<A, NullMutex> obj;
+	ObjectPool<A, std::mutex> obj;
 	obj.resize(2);
 	A *i = obj.pop();
 	obj.push(i);

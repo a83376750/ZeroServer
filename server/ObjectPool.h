@@ -1,10 +1,13 @@
 #pragma once
-#include <vector>
-#include <map>
-
 #include "Header.h"
 
-template<class Obj, class Mutex = std::mutex>
+struct DefaultObj
+{
+	unsigned char v[64];
+};
+
+
+template<class Obj, class Mutex = NullMutex>
 class ObjectPool
 {
 public:
@@ -25,6 +28,7 @@ public:
 
 	ObjectPool(int count = E_DEFAULT::DEFAULT_POOL_OBJ_COUNT);
 	virtual ~ObjectPool();
+
 	ObjectPool& operator=(const ObjectPool &) = delete;
 	ObjectPool(const ObjectPool &) = delete;
 
@@ -39,6 +43,8 @@ public:
 	size_t use_obj_count()const;
 	size_t free_obj_count()const;
 	size_t total_obj_count()const;
+
+	void debug_info();
 
 protected:
 	ObjectPlus* create(Obj *obj = nullptr)
@@ -63,6 +69,13 @@ private:
 };
 
 template<class Obj, class Mutex /*= std::mutex*/>
+void ObjectPool<Obj, Mutex>::debug_info()
+{
+	printf("free_obj_list_size_ = %u, use_obj_list_size_ = %u, used_size = %u\n",
+		m_free_obj_count, m_use_obj_map.size(), m_use_obj_count);
+}
+
+template<class Obj, class Mutex /*= std::mutex*/>
 ObjectPool<Obj, Mutex>::ObjectPool(int count /*= E_DEFAULT::DEFAULT_POOL_OBJ_COUNT*/)
 {
 	m_name.clear();
@@ -74,6 +87,8 @@ ObjectPool<Obj, Mutex>::ObjectPool(int count /*= E_DEFAULT::DEFAULT_POOL_OBJ_COU
 	m_total_obj_count = 0;
 
 	reserve(count);
+	m_name = typeid(Obj).name();
+	debug_info();
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
@@ -124,7 +139,6 @@ void ObjectPool<Obj, Mutex>::resize(int initCount)
 		ObjectPlus *p = create();
 		m_obj_vec.emplace_back(p);
 		m_use_obj_map[(size_t)(p->m_obj)] = p;
-		printf("resize %d\n", (size_t)(p->m_obj));
 		m_free_obj_count++;
 		m_total_obj_count++;
 	}
@@ -165,7 +179,6 @@ void ObjectPool<Obj, Mutex>::push(Obj *obj)
 		ObjectPlus *p = create(obj);
 		p->m_is_use = false;
 		m_use_obj_map[(size_t)(obj)] = p;
-		printf("plus %d\n", (size_t)(obj));
 		m_obj_vec.push_back(p);
 		m_total_obj_count++;
 	}

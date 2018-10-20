@@ -5,11 +5,9 @@
 #include <set>
 #include <map>
 #include <vector>
+#include <stdint.h>
 
 using namespace std;
-
-#define GAME_SPACE_BEGIN namespace game_space {
-#define GAME_SPACE_END }
 
 #define SERVICE_NAME_LOG    		"log"
 #define SERVICE_NAME_LOGIC  		"logic"
