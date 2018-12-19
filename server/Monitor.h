@@ -1,5 +1,4 @@
 #pragma once
-#include "Theron/Actor.h"
 
 class IMonitor
 {
@@ -14,22 +13,15 @@ public:
 	{
 		return nullptr;
 	}
-
-
 };
 
-class Monitor : public IMonitor/*, public Theron::Actor*/
+class Monitor : public IMonitor
 {
-public:
-	Monitor(const char *name)/* : framework_(FM::pop(name))Theron::Actor(framework_)*/
+	Monitor(const char *name)
 	{
-		//RegisterHandler(this, &Monitor::handle);
+		
 	}
 	virtual void start() {}
 	virtual void stop() {}
-
-	//virtual void handle(const std::string &message, const Theron::Address from) {};
-
 private:
-	//Theron::Framework *framework_;
 };
