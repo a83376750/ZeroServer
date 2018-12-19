@@ -3,6 +3,7 @@
 
 
 GateMonitor::GateMonitor()
+	:Monitor("GateMonitor")
 {
 	unit_ = new GateUnit();
 }

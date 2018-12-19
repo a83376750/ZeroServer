@@ -93,7 +93,6 @@
     <ClInclude Include="ConfigStruct.h" />
     <ClInclude Include="Connector.h" />
     <ClInclude Include="DebugServer.h" />
-    <ClInclude Include="FrameworkMgr.h" />
     <ClInclude Include="GameConfig.h" />
     <ClInclude Include="GateMonitor.h" />
     <ClInclude Include="GateService.h" />
@@ -126,7 +125,6 @@
     <ClCompile Include="BaseUnit.cpp" />
     <ClCompile Include="ConfigStruct.cpp" />
     <ClCompile Include="DebugServer.cpp" />
-    <ClCompile Include="FrameworkMgr.cpp" />
     <ClCompile Include="GameConfig.cpp" />
     <ClCompile Include="GateMonitor.cpp" />
     <ClCompile Include="GateService.cpp" />
@@ -227,7 +225,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ShowProgress>NotSet</ShowProgress>
-      <AdditionalDependencies>libprotobufd.lib;nanomsg.lib;glogd.lib;libprotocd.lib;Theron.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobufd.lib;nanomsg.lib;glogd.lib;libprotocd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>./lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

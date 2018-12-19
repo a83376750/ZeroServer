@@ -1,8 +1,6 @@
 #pragma once
 #include "Theron/Actor.h"
 
-#include "FrameworkMgr.h"
-
 class IMonitor
 {
 public:
@@ -20,19 +18,18 @@ public:
 
 };
 
-
-class Monitor : public IMonitor, public Theron::Actor
+class Monitor : public IMonitor/*, public Theron::Actor*/
 {
 public:
-	Monitor(const char *name) : framework_(FM::pop(name))Theron::Actor(framework_)
+	Monitor(const char *name)/* : framework_(FM::pop(name))Theron::Actor(framework_)*/
 	{
-		RegisterHandler(this, &Monitor::handle);
+		//RegisterHandler(this, &Monitor::handle);
 	}
 	virtual void start() {}
 	virtual void stop() {}
 
-	virtual void handle(const std::string &message, const Theron::Address from) {};
+	//virtual void handle(const std::string &message, const Theron::Address from) {};
 
 private:
-	Theron::Framework *framework_;
+	//Theron::Framework *framework_;
 };

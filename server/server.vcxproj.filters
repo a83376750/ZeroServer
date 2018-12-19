@@ -357,7 +357,6 @@
     <ClInclude Include="Monitor.h">
       <Filter>monitor</Filter>
     </ClInclude>
-    <ClInclude Include="FrameworkMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeValue.cpp">
@@ -412,7 +411,6 @@
     <ClCompile Include="ServiceMgr.cpp">
       <Filter>seriver</Filter>
     </ClCompile>
-    <ClCompile Include="FrameworkMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="test.lua">
