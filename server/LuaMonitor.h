@@ -15,8 +15,8 @@ public:
 
 
 protected:
-	static lua_State* CreateVirLuaSys();
-	static bool LoadLuaFile(lua_State *l, const char *path);
-	static void CloseVirLuaSys(lua_State *l);
+// 	static lua_State* CreateVirLuaSys();
+// 	static bool LoadLuaFile(lua_State *l, const char *path);
+// 	static void CloseVirLuaSys(lua_State *l);
 };
 

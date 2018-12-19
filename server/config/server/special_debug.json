@@ -7,6 +7,7 @@
       "connect_scene": [ 301 ],
       "log": "1111111",
       "machine": "machine-alpha",
+      "address": "127.0.0.1",
       "outer_port": 11501,
       "inner_port": 11803
     },
@@ -20,6 +21,7 @@
       "log": "1111111",
       "chat_scene": 201,
       "machine": "machine-alpha",
+      "address": "127.0.0.1",
       "inner_port": 11901,
       "send_thr": 2
     },
@@ -31,6 +33,7 @@
       "log": "1111110",
       "chat_scene": 201,
       "machine": "machine-alpha",
+      "address": "127.0.0.1",
       "inner_port": 11903,
       "send_thr": 1
     },
@@ -41,6 +44,7 @@
       "connect_scene": [ 201, 301 ],
       "log": "1111111",
       "machine": "machine-alpha",
+      "address": "127.0.0.1",
       "limit_accept": 3000,
       "inner_port": 11804,
       "php_port": 11801
@@ -52,6 +56,7 @@
       "connect_scene": [ 101, 201, 301, "scene" ],
       "log": "1111111",
       "machine": "machine-alpha",
+      "address": "127.0.0.1",
       "outer_port": 11511,
       "limit_accept": 3000,
       "inner_port": 11805
@@ -63,6 +68,7 @@
       "connect_scene": [ 601, 301 ],
       "log": "1111111",
       "machine": "machine-alpha",
+      "address": "127.0.0.1",
       "outer_port": 11500,
       "limit_accept": 3000
     }

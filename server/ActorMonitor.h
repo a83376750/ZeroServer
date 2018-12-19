@@ -6,25 +6,35 @@
 class ActorMonitor
 {
 public:
-	void init();
+	ActorMonitor() {}
+	~ActorMonitor() {}
+	void Init();
 
-	bool isStart();
-	bool isExit();
+	bool IsStart();
+	bool IsExit();
+
+	void Handle();
+
 };
 
-void ActorMonitor::init()
+void ActorMonitor::Init()
 {
 
 }
 
-bool ActorMonitor::isStart()
+bool ActorMonitor::IsStart()
 {
-
+	return true;
 }
 
-bool ActorMonitor::isExit()
+bool ActorMonitor::IsExit()
 {
+	return false;
+}
 
+void ActorMonitor::Handle()
+{
+	printf("hello world\n");
 }
 
 typedef Singleton<ActorMonitor> s_ActorMonitor;

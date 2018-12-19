@@ -4,17 +4,11 @@
     <Filter Include="src">
       <UniqueIdentifier>{5b940365-8692-469f-9d23-9ec6a4eeae19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="luasrc">
-      <UniqueIdentifier>{965659fd-6d55-404e-ada9-4b2ac12ad8a0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="lua">
       <UniqueIdentifier>{098447b5-ce96-4fcf-86bc-f4da2be184df}</UniqueIdentifier>
     </Filter>
     <Filter Include="inc">
       <UniqueIdentifier>{b6dbeebd-78e3-4159-8321-6e162ae3bb4d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="rapidjson">
-      <UniqueIdentifier>{feb49eff-1eae-4dce-8d8c-8710d7da3778}</UniqueIdentifier>
     </Filter>
     <Filter Include="config">
       <UniqueIdentifier>{071e6ddc-db2b-4668-899a-6842430ca7da}</UniqueIdentifier>
@@ -22,96 +16,48 @@
     <Filter Include="message">
       <UniqueIdentifier>{78c78c98-058a-400e-bcd7-072d8667726e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="zeromq">
-      <UniqueIdentifier>{e5ac5fd6-163e-4176-a224-fa3f62bb0dcf}</UniqueIdentifier>
+    <Filter Include="seriver">
+      <UniqueIdentifier>{b2eb8f05-5c11-4c54-9f2c-9e09465c2eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sort">
+      <UniqueIdentifier>{9afc8027-a139-44fe-bf84-c7d00b31d681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="struct">
+      <UniqueIdentifier>{8353e295-505f-4df2-9727-a5a341cadd06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="monitor">
+      <UniqueIdentifier>{1ca66065-564d-4b8a-8036-19a532c7265a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\src">
+      <UniqueIdentifier>{3d1324cd-ef07-4dbb-81fb-7de8dde0c4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\conf">
+      <UniqueIdentifier>{2295c28b-7dc8-4241-91a9-e0c5b70d5f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="unit">
+      <UniqueIdentifier>{0123a979-8721-4b2a-82f9-f5cfaa3eb25b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd">
+      <UniqueIdentifier>{a8bfb1c5-9add-4234-b7b3-a977023a67f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\glog">
+      <UniqueIdentifier>{7caeca05-1596-49a6-9fae-8a5545f6270d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\nanomsg">
+      <UniqueIdentifier>{83184765-360c-43e7-b288-e53f03773c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\rapidjson">
+      <UniqueIdentifier>{feb49eff-1eae-4dce-8d8c-8710d7da3778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\luasrc">
+      <UniqueIdentifier>{965659fd-6d55-404e-ada9-4b2ac12ad8a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\Theron">
+      <UniqueIdentifier>{8c01fac8-e613-4e09-b229-0f599496948c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TimeValue.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectPool.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lapi.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lauxlib.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lcode.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lctype.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\ldebug.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\ldo.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lfunc.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lgc.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\llex.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\llimits.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lmem.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lobject.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lopcodes.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lparser.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lprefix.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lstate.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lstring.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\ltable.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\ltm.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lua.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lua.hpp">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\luaconf.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lualib.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lundump.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lvm.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="lua\src\lzio.h">
-      <Filter>luasrc</Filter>
-    </ClInclude>
-    <ClInclude Include="LuaMonitor.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="Header.h">
@@ -123,134 +69,8 @@
     <ClInclude Include="DebugServer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="rapidjson\allocators.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\cursorstreamwrapper.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\document.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\encodedstream.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\encodings.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\error\en.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\error\error.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\filereadstream.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\filewritestream.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\fwd.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\biginteger.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\diyfp.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\dtoa.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\ieee754.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\itoa.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\meta.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\pow10.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\regex.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\stack.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\strfunc.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\strtod.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\internal\swap.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\istreamwrapper.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\memorybuffer.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\memorystream.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\msinttypes\inttypes.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\msinttypes\stdint.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\ostreamwrapper.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\pointer.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\prettywriter.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\rapidjson.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\reader.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\schema.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\stream.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\stringbuffer.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidjson\writer.h">
-      <Filter>rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="GameConfig.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseActor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="ActorMonitor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="SpinLock.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="message\ProtoInner001.pb.h">
       <Filter>message</Filter>
-    </ClInclude>
-    <ClInclude Include="zeromq\zmq.h">
-      <Filter>zeromq</Filter>
-    </ClInclude>
-    <ClInclude Include="zeromq\zmq_utils.h">
-      <Filter>zeromq</Filter>
     </ClInclude>
     <ClInclude Include="Connector.h">
       <Filter>inc</Filter>
@@ -261,136 +81,348 @@
     <ClInclude Include="Reader.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectPool.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseActor.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="zeromq\TestAPI.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerString.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="SR.h">
+      <Filter>seriver</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>sort</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadLock.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="GateService.h">
+      <Filter>seriver</Filter>
+    </ClInclude>
+    <ClInclude Include="LogicService.h">
+      <Filter>seriver</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\allocators.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\cursorstreamwrapper.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\document.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\encodedstream.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\encodings.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\error\en.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\error\error.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\filereadstream.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\filewritestream.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\fwd.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\biginteger.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\diyfp.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\dtoa.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\ieee754.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\itoa.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\meta.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\pow10.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\regex.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\stack.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\strfunc.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\strtod.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\internal\swap.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\istreamwrapper.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\memorybuffer.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\memorystream.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\msinttypes\inttypes.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\msinttypes\stdint.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\ostreamwrapper.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\pointer.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\prettywriter.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\rapidjson.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\reader.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\schema.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\stream.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\stringbuffer.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\rapidjson\writer.h">
+      <Filter>3rd\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nanomsg\src\nn.h">
+      <Filter>3rd\nanomsg</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nanomsg\src\tcp.h">
+      <Filter>3rd\nanomsg</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nanomsg\src\pair.h">
+      <Filter>3rd\nanomsg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nn.hpp">
+      <Filter>3rd\nanomsg</Filter>
+    </ClInclude>
+    <ClInclude Include="Watch.h">
+      <Filter>seriver</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>struct</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nanomsg\src\bus.h">
+      <Filter>3rd\nanomsg</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nanomsg\src\pipeline.h">
+      <Filter>3rd\nanomsg</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorMonitor.h">
+      <Filter>monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaMonitor.h">
+      <Filter>monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerMonitor.h">
+      <Filter>monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConfig.h">
+      <Filter>config\src</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\lua\src\lauxlib.h">
+      <Filter>3rd\luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\lua\src\lua.h">
+      <Filter>3rd\luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\lua\src\luaconf.h">
+      <Filter>3rd\luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\lua\src\lualib.h">
+      <Filter>3rd\luasrc</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseUnit.h">
+      <Filter>unit</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgDefine.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="GateUnit.h">
+      <Filter>unit</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseStruct.h">
+      <Filter>unit</Filter>
+    </ClInclude>
+    <ClInclude Include="GateMonitor.h">
+      <Filter>monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigStruct.h">
+      <Filter>config\src</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceMgr.h">
+      <Filter>seriver</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\glog\log_severity.h">
+      <Filter>3rd\glog</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\glog\logging.h">
+      <Filter>3rd\glog</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\glog\raw_logging.h">
+      <Filter>3rd\glog</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\glog\stl_logging.h">
+      <Filter>3rd\glog</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\glog\vlog_is_on.h">
+      <Filter>3rd\glog</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Theron.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Actor.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\BasicTypes.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Catcher.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Counters.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\DefaultAllocator.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Defines.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\EndPoint.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Framework.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\IAllocator.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Receiver.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Register.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\ActorRef.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Address.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Align.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\AllocatorManager.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\Theron\Assert.h">
+      <Filter>3rd\Theron</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitor.h">
+      <Filter>monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameworkMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeValue.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="lua\src\lapi.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lauxlib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lbaselib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lbitlib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lcode.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lcorolib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lctype.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ldblib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ldebug.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ldo.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ldump.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lfunc.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lgc.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\linit.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\liolib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\llex.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lmathlib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lmem.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\loadlib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lobject.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lopcodes.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\loslib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lparser.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lstate.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lstring.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lstrlib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ltable.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ltablib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\ltm.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lua.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\luac.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lundump.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lutf8lib.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lvm.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="lua\src\lzio.c">
-      <Filter>luasrc</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaMonitor.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="DebugServer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="GameConfig.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="message\ProtoInner001.pb.cc">
       <Filter>message</Filter>
     </ClCompile>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="SR.cpp">
+      <Filter>seriver</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>sort</Filter>
+    </ClCompile>
+    <ClCompile Include="GateService.cpp">
+      <Filter>seriver</Filter>
+    </ClCompile>
+    <ClCompile Include="LogicService.cpp">
+      <Filter>seriver</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaMonitor.cpp">
+      <Filter>monitor</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerMonitor.cpp">
+      <Filter>monitor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameConfig.cpp">
+      <Filter>config\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GateUnit.cpp">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseUnit.cpp">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseStruct.cpp">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="GateMonitor.cpp">
+      <Filter>monitor</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigStruct.cpp">
+      <Filter>config\src</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceMgr.cpp">
+      <Filter>seriver</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameworkMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="test.lua">
       <Filter>lua</Filter>
     </None>
+    <None Include="config\server\machine.json">
+      <Filter>config\conf</Filter>
+    </None>
     <None Include="config\server\special_debug.json">
-      <Filter>config</Filter>
+      <Filter>config\conf</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
 {
     "md5_key" : "hhsy_dev_s001a_123!@qwe",
-    "server_flag": "jy001",	// 配置服务器的flag
+    "server_flag": "jy001",
 	"open_date" : 20170215,
-	"open_time" : 090000,
     "log" : "1111111",
-    "special": "local",
+    "special": "debug",
+    "thread_count": 10,
     "run_machine" : "machine-alpha",
     "machine_list" : [{
         "name" : "machine-alpha",

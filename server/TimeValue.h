@@ -1,5 +1,6 @@
 #pragma once
 #include <ctime>
+#include <string>
 
 class TimeValue
 {
@@ -14,7 +15,8 @@ public:
 public:
 	static const TimeValue ZERO;
 
-	std::time_t getTime();
+	static std::time_t GetTime();
+	static std::string GetCurTimeStr();
 	TimeValue();
 	~TimeValue();
 };

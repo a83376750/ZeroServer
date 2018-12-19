@@ -7,3 +7,5 @@ echo %%a
 protoc --cpp_out=../message/ ./%%a
 )
 echo done
+
+pause

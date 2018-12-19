@@ -4,32 +4,29 @@
 #include "rapidjson/document.h"
 #include "Singleton.h"
 #include "Header.h"
-
+#include "ConfigStruct.h"
 
 class GameConfig
 {
 public:
+	typedef rapidjson::Document Doc;
+	typedef rapidjson::Value Json;
 	enum
 	{
-		MAX_VERSION_CNT = 2
+		MAX_VERSION_CNT = 2,
+
+		DEBUG_INIT = 1,
+		FORMAL_INIT = 2,
 	};
-	GameConfig();
-	~GameConfig();
-	void init();
-	void start();
-
-	int LoadJsonFile(const char *path, rapidjson::Document &d);
-
-
 	struct BasicConfig
 	{
 	public:
 		BasicConfig();
-		const rapidjson::Document& ConstJson() const;
-		rapidjson::Document &RevertJson();
+		const Doc& ConstJson() const;
+		Doc &RevertJson();
 
-		const rapidjson::Value& Find(int key);
-		const rapidjson::Value& ConstJsonName(const char* key) const;
+		const Json& Find(int key);
+		const Json& ConstJsonName(const char* key) const;
 
 		int CurVersion() const;
 		int PrevVersion() const;
@@ -43,20 +40,48 @@ public:
 		const std::string& VersionNo()const;
 
 	private:
-		rapidjson::Document m_doc[MAX_VERSION_CNT];
-		int m_curVer;
-		std::string m_strVec[MAX_VERSION_CNT];
-		rapidjson::Document m_null;
+		Doc doc_[MAX_VERSION_CNT];
+		int curVer_;
+		std::string str_vec_[MAX_VERSION_CNT];
+		Doc null_json_;
 	};
 	typedef std::map<int, BasicConfig> MapBasicConfig;
-	typedef std::map<int, rapidjson::Document*> JsonMap;
+	typedef std::map<int, Doc*> JsonMap;
 
+	GameConfig();
+	~GameConfig();
+	void init(int init_type);
+	void start();
 
-	int LoadServerConfig(bool bStart = false);
+	void DebugInit();
+	void FormalInit();
+	void LoadAllFile(const char *folder = "all");
+
+	int LoadJsonFile(const char *path, Doc &d);
+//////////////////////////////////////////////////////////////////////////
+public:
+	struct ServerInfo
+	{
+		std::string server_flag;
+		int64_t server_id;
+	};
+	ServerInfo server_info_;
+	ServerDetailVec server_vec_;
+
+	void GetServerDetail(ServerDetail &out_detail, const char *service_name, int index = -1);
+	int ServiceType(const std::string &service_name);
+	int LoadServerConf(bool bStart = false);
+	const ServerDetailVec& GetServerDetail();
+private:
+	Doc server_conf_;
+//////////////////////////////////////////////////////////////////////////
+public:
+	Json& MachineJson(const char *key);
+	int LoadMachineConf();
 
 private:
-	rapidjson::Document m_serverConfig;
+	Doc machine_conf_;
+	std::string special_path_;
 };
 
-typedef Singleton<GameConfig> GameConfigSingle;
-#define CONFIG_INSTANCE GameConfigSingle::instance()
+typedef Singleton<GameConfig> GC;

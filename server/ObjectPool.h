@@ -1,11 +1,20 @@
 #pragma once
-#include "Header.h"
+
+#include "ThreadLock.h"
 #include <mutex>
 
 struct DefaultObj
 {
 	unsigned char v[64];
 };
+
+struct DynaObj
+{
+	DynaObj(char *ptr, size_t len) : ptr_(ptr), len_(len) {}
+	char *ptr_;
+	size_t len_;
+};
+
 
 
 template<class Obj, class Mutex = NullMutex>
@@ -19,9 +28,9 @@ public:
 
 	struct ObjectPlus
 	{
-		ObjectPlus() :m_obj(nullptr), m_is_use(false) {}
-		bool m_is_use;
-		Obj *m_obj;
+		ObjectPlus() :obj(nullptr), is_use(false) {}
+		bool is_use;
+		Obj *obj;
 	};
 
 	typedef std::map<uint64_t, ObjectPlus*> UseObjMap;
@@ -41,11 +50,11 @@ public:
 	Obj* pop();
 	bool empty()const;
 
-	size_t use_obj_count()const;
-	size_t free_obj_count()const;
-	size_t total_obj_count()const;
+	size_t UseObjCount()const;
+	size_t FreeObjCount()const;
+	size_t TotalObjCount()const;
 
-	void debug_info();
+	void DebugInfo();
 
 protected:
 	ObjectPlus* create(Obj *obj = nullptr)
@@ -54,42 +63,42 @@ protected:
 		while ((p = new ObjectPlus()) == nullptr);
 		while (obj == nullptr)
 			obj = new Obj;
-		p->m_obj = obj;
+		p->obj = obj;
 		return p;
 	}
 
 private:
-	Mutex m_mutex;
-	ObjVec m_obj_vec;
-	UseObjMap m_use_obj_map;
+	Mutex mutex_;
+	ObjVec obj_vec_;
+	UseObjMap use_obj_map_;
 
-	size_t m_use_obj_count;
-	size_t m_free_obj_count;
-	size_t m_total_obj_count;
-	std::string m_name;
+	size_t use_obj_count_;
+	size_t free_obj_count_;
+	size_t total_obj_count_;
+	std::string name_;
 };
 
 template<class Obj, class Mutex /*= std::mutex*/>
-void ObjectPool<Obj, Mutex>::debug_info()
+void ObjectPool<Obj, Mutex>::DebugInfo()
 {
 	printf("free_obj_list_size_ = %u, use_obj_list_size_ = %u, used_size = %u\n",
-		m_free_obj_count, m_use_obj_map.size(), m_use_obj_count);
+		free_obj_count_, use_obj_map_.size(), use_obj_count_);
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
 ObjectPool<Obj, Mutex>::ObjectPool(int count /*= E_DEFAULT::DEFAULT_POOL_OBJ_COUNT*/)
 {
-	m_name.clear();
-	m_obj_vec.clear();
-	m_obj_vec.clear();
+	name_.clear();
+	obj_vec_.clear();
+	obj_vec_.clear();
 
-	m_use_obj_count = 0;
-	m_free_obj_count = 0;
-	m_total_obj_count = 0;
+	use_obj_count_ = 0;
+	free_obj_count_ = 0;
+	total_obj_count_ = 0;
 
 	reserve(count);
-	m_name = typeid(Obj).name();
-	debug_info();
+	name_ = typeid(Obj).name();
+	DebugInfo();
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
@@ -99,114 +108,121 @@ ObjectPool<Obj, Mutex>::~ObjectPool()
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
-size_t ObjectPool<Obj, Mutex>::total_obj_count() const
+size_t ObjectPool<Obj, Mutex>::TotalObjCount() const
 {
-	return m_total_obj_count;
+	return total_obj_count_;
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
-size_t ObjectPool<Obj, Mutex>::free_obj_count() const
+size_t ObjectPool<Obj, Mutex>::FreeObjCount() const
 {
-	return m_free_obj_count;
+	return free_obj_count_;
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
-size_t ObjectPool<Obj, Mutex>::use_obj_count() const
+size_t ObjectPool<Obj, Mutex>::UseObjCount() const
 {
-	return m_use_obj_count;
+	return use_obj_count_;
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
 void ObjectPool<Obj, Mutex>::reserve(int count)
 {
-	std::lock_guard<Mutex> lock(m_mutex);
-	m_obj_vec.reserve(count);
+	std::lock_guard<Mutex> lock(mutex_);
+	obj_vec_.reserve(count);
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
 bool ObjectPool<Obj, Mutex>::empty() const
 {
-	std::lock_guard<Mutex> lock(m_mutex);
-	return m_obj_vec.empty();
+	std::lock_guard<Mutex> lock(mutex_);
+	return obj_vec_.empty();
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
 void ObjectPool<Obj, Mutex>::resize(int initCount)
 {
-	std::lock_guard<Mutex> lock(m_mutex);
+	std::lock_guard<Mutex> lock(mutex_);
 	initCount = initCount > 0 ? initCount : E_DEFAULT::DEFAULT_POOL_OBJ_COUNT;
 	for (int i = 0; i < initCount; ++i)
 	{
 		ObjectPlus *p = create();
-		m_obj_vec.emplace_back(p);
-		m_use_obj_map[(size_t)(p->m_obj)] = p;
-		m_free_obj_count++;
-		m_total_obj_count++;
+		obj_vec_.emplace_back(p);
+		use_obj_map_[(size_t)(p->obj)] = p;
+		free_obj_count_++;
+		total_obj_count_++;
 	}
 }
 
 template<class Obj, class Mutex /*= std::mutex*/>
 void ObjectPool<Obj, Mutex>::clear()
 {
-	std::lock_guard<Mutex> lock(m_mutex);
+	std::lock_guard<Mutex> lock(mutex_);
 	ObjectPlus *obj = nullptr;
-	while (m_obj_vec.empty() == false)
+	while (obj_vec_.empty() == false)
 	{
-		obj = m_obj_vec.back();
-		m_obj_vec.pop_back();
-		auto iter = m_use_obj_map.find((size_t)(obj->m_obj));
-		if (iter != m_use_obj_map.end())
-			m_use_obj_map.erase(iter);
-		SAFE_DELETE(obj->m_obj);
+		obj = obj_vec_.back();
+		obj_vec_.pop_back();
+		auto iter = use_obj_map_.find((size_t)(obj->obj));
+		if (iter != use_obj_map_.end())
+			use_obj_map_.erase(iter);
+		SAFE_DELETE(obj->obj);
 		SAFE_DELETE(obj);
 	}
 
-	m_use_obj_count = 0;
-	m_free_obj_count = 0;
-	m_total_obj_count = 0;
-	UseObjMap().swap(m_use_obj_map);
-	ObjVec().swap(m_obj_vec);
+	use_obj_count_ = 0;
+	free_obj_count_ = 0;
+	total_obj_count_ = 0;
+	UseObjMap().swap(use_obj_map_);
+	ObjVec().swap(obj_vec_);
 }
 
 template<class Obj, class Mutex>
 void ObjectPool<Obj, Mutex>::push(Obj *obj)
 {
-	std::lock_guard<Mutex> lock(m_mutex);
+	std::lock_guard<Mutex> lock(mutex_);
 	obj->reset();
 	
-	auto iter = m_use_obj_map.find((size_t)(obj));
-	if (iter == m_use_obj_map.end())
+	auto iter = use_obj_map_.find((size_t)(obj));
+	if (iter == use_obj_map_.end())
 	{
 		ObjectPlus *p = create(obj);
-		p->m_is_use = false;
-		m_use_obj_map[(size_t)(obj)] = p;
-		m_obj_vec.push_back(p);
-		m_total_obj_count++;
+		p->is_use = false;
+		use_obj_map_[(size_t)(obj)] = p;
+		obj_vec_.push_back(p);
+		total_obj_count_++;
 	}
 	else
 	{
-		iter->second->m_is_use = false;
-		m_obj_vec.push_back(iter->second);
+		iter->second->is_use = false;
+		obj_vec_.push_back(iter->second);
 	}
-	m_free_obj_count++;
-	m_use_obj_count--;
+	free_obj_count_++;
+	use_obj_count_--;
 }
 
 template<class Obj, class Mutex>
 Obj* ObjectPool<Obj, Mutex>::pop()
 {
-	std::lock_guard<Mutex> lock(m_mutex);
-	JUDGE_RETURN(m_obj_vec.empty(), nullptr);
+	std::lock_guard<Mutex> lock(mutex_);
+
 	ObjectPlus *tmp = nullptr;
-	tmp = m_obj_vec.back();
-	m_obj_vec.pop_back();
-	auto iter = m_use_obj_map.find((size_t)(tmp->m_obj));
-	if (iter != m_use_obj_map.end())
-		m_use_obj_map.erase(iter);
-	while ((tmp->m_obj = new Obj()) == nullptr);
-	tmp->m_is_use = true;
-	m_free_obj_count--;
-	m_use_obj_count++;
-	return tmp->m_obj;
+	if (obj_vec_.empty())
+	{
+		tmp = create();
+	}
+	else
+	{
+		tmp = obj_vec_.back();
+		obj_vec_.pop_back();
+		auto iter = use_obj_map_.find((size_t)(tmp->obj));
+		if (iter != use_obj_map_.end())
+			use_obj_map_.erase(iter);
+	}
+	
+	tmp->is_use = true;
+	free_obj_count_--;
+	use_obj_count_++;
+	return tmp->obj;
 }
 

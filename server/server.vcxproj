@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,129 +19,131 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3rd\glog\logging.h" />
+    <ClInclude Include="3rd\glog\log_severity.h" />
+    <ClInclude Include="3rd\glog\raw_logging.h" />
+    <ClInclude Include="3rd\glog\stl_logging.h" />
+    <ClInclude Include="3rd\glog\vlog_is_on.h" />
+    <ClInclude Include="3rd\lua\src\lauxlib.h" />
+    <ClInclude Include="3rd\lua\src\lua.h" />
+    <ClInclude Include="3rd\lua\src\luaconf.h" />
+    <ClInclude Include="3rd\lua\src\lualib.h" />
+    <ClInclude Include="3rd\nanomsg\src\bus.h" />
+    <ClInclude Include="3rd\nanomsg\src\nn.h" />
+    <ClInclude Include="3rd\nanomsg\src\pair.h" />
+    <ClInclude Include="3rd\nanomsg\src\pipeline.h" />
+    <ClInclude Include="3rd\nanomsg\src\tcp.h" />
+    <ClInclude Include="3rd\rapidjson\allocators.h" />
+    <ClInclude Include="3rd\rapidjson\cursorstreamwrapper.h" />
+    <ClInclude Include="3rd\rapidjson\document.h" />
+    <ClInclude Include="3rd\rapidjson\encodedstream.h" />
+    <ClInclude Include="3rd\rapidjson\encodings.h" />
+    <ClInclude Include="3rd\rapidjson\error\en.h" />
+    <ClInclude Include="3rd\rapidjson\error\error.h" />
+    <ClInclude Include="3rd\rapidjson\filereadstream.h" />
+    <ClInclude Include="3rd\rapidjson\filewritestream.h" />
+    <ClInclude Include="3rd\rapidjson\fwd.h" />
+    <ClInclude Include="3rd\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="3rd\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="3rd\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="3rd\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="3rd\rapidjson\internal\itoa.h" />
+    <ClInclude Include="3rd\rapidjson\internal\meta.h" />
+    <ClInclude Include="3rd\rapidjson\internal\pow10.h" />
+    <ClInclude Include="3rd\rapidjson\internal\regex.h" />
+    <ClInclude Include="3rd\rapidjson\internal\stack.h" />
+    <ClInclude Include="3rd\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="3rd\rapidjson\internal\strtod.h" />
+    <ClInclude Include="3rd\rapidjson\internal\swap.h" />
+    <ClInclude Include="3rd\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="3rd\rapidjson\memorybuffer.h" />
+    <ClInclude Include="3rd\rapidjson\memorystream.h" />
+    <ClInclude Include="3rd\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="3rd\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="3rd\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="3rd\rapidjson\pointer.h" />
+    <ClInclude Include="3rd\rapidjson\prettywriter.h" />
+    <ClInclude Include="3rd\rapidjson\rapidjson.h" />
+    <ClInclude Include="3rd\rapidjson\reader.h" />
+    <ClInclude Include="3rd\rapidjson\schema.h" />
+    <ClInclude Include="3rd\rapidjson\stream.h" />
+    <ClInclude Include="3rd\rapidjson\stringbuffer.h" />
+    <ClInclude Include="3rd\rapidjson\writer.h" />
+    <ClInclude Include="3rd\Theron\Actor.h" />
+    <ClInclude Include="3rd\Theron\ActorRef.h" />
+    <ClInclude Include="3rd\Theron\Address.h" />
+    <ClInclude Include="3rd\Theron\Align.h" />
+    <ClInclude Include="3rd\Theron\AllocatorManager.h" />
+    <ClInclude Include="3rd\Theron\Assert.h" />
+    <ClInclude Include="3rd\Theron\BasicTypes.h" />
+    <ClInclude Include="3rd\Theron\Catcher.h" />
+    <ClInclude Include="3rd\Theron\Counters.h" />
+    <ClInclude Include="3rd\Theron\DefaultAllocator.h" />
+    <ClInclude Include="3rd\Theron\Defines.h" />
+    <ClInclude Include="3rd\Theron\EndPoint.h" />
+    <ClInclude Include="3rd\Theron\Framework.h" />
+    <ClInclude Include="3rd\Theron\IAllocator.h" />
+    <ClInclude Include="3rd\Theron\Receiver.h" />
+    <ClInclude Include="3rd\Theron\Register.h" />
+    <ClInclude Include="3rd\Theron\Theron.h" />
     <ClInclude Include="ActorMonitor.h" />
     <ClInclude Include="BaseActor.h" />
+    <ClInclude Include="BaseStruct.h" />
+    <ClInclude Include="BaseUnit.h" />
+    <ClInclude Include="ConfigStruct.h" />
     <ClInclude Include="Connector.h" />
     <ClInclude Include="DebugServer.h" />
+    <ClInclude Include="FrameworkMgr.h" />
     <ClInclude Include="GameConfig.h" />
+    <ClInclude Include="GateMonitor.h" />
+    <ClInclude Include="GateService.h" />
+    <ClInclude Include="GateUnit.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Monitor.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="LogicService.h" />
     <ClInclude Include="LuaMonitor.h" />
-    <ClInclude Include="lua\src\lapi.h" />
-    <ClInclude Include="lua\src\lauxlib.h" />
-    <ClInclude Include="lua\src\lcode.h" />
-    <ClInclude Include="lua\src\lctype.h" />
-    <ClInclude Include="lua\src\ldebug.h" />
-    <ClInclude Include="lua\src\ldo.h" />
-    <ClInclude Include="lua\src\lfunc.h" />
-    <ClInclude Include="lua\src\lgc.h" />
-    <ClInclude Include="lua\src\llex.h" />
-    <ClInclude Include="lua\src\llimits.h" />
-    <ClInclude Include="lua\src\lmem.h" />
-    <ClInclude Include="lua\src\lobject.h" />
-    <ClInclude Include="lua\src\lopcodes.h" />
-    <ClInclude Include="lua\src\lparser.h" />
-    <ClInclude Include="lua\src\lprefix.h" />
-    <ClInclude Include="lua\src\lstate.h" />
-    <ClInclude Include="lua\src\lstring.h" />
-    <ClInclude Include="lua\src\ltable.h" />
-    <ClInclude Include="lua\src\ltm.h" />
-    <ClInclude Include="lua\src\lua.h" />
-    <ClInclude Include="lua\src\lua.hpp" />
-    <ClInclude Include="lua\src\luaconf.h" />
-    <ClInclude Include="lua\src\lualib.h" />
-    <ClInclude Include="lua\src\lundump.h" />
-    <ClInclude Include="lua\src\lvm.h" />
-    <ClInclude Include="lua\src\lzio.h" />
     <ClInclude Include="message\ProtoInner001.pb.h" />
+    <ClInclude Include="MsgDefine.h" />
     <ClInclude Include="ObjectPool.h" />
-    <ClInclude Include="rapidjson\allocators.h" />
-    <ClInclude Include="rapidjson\cursorstreamwrapper.h" />
-    <ClInclude Include="rapidjson\document.h" />
-    <ClInclude Include="rapidjson\encodedstream.h" />
-    <ClInclude Include="rapidjson\encodings.h" />
-    <ClInclude Include="rapidjson\error\en.h" />
-    <ClInclude Include="rapidjson\error\error.h" />
-    <ClInclude Include="rapidjson\filereadstream.h" />
-    <ClInclude Include="rapidjson\filewritestream.h" />
-    <ClInclude Include="rapidjson\fwd.h" />
-    <ClInclude Include="rapidjson\internal\biginteger.h" />
-    <ClInclude Include="rapidjson\internal\diyfp.h" />
-    <ClInclude Include="rapidjson\internal\dtoa.h" />
-    <ClInclude Include="rapidjson\internal\ieee754.h" />
-    <ClInclude Include="rapidjson\internal\itoa.h" />
-    <ClInclude Include="rapidjson\internal\meta.h" />
-    <ClInclude Include="rapidjson\internal\pow10.h" />
-    <ClInclude Include="rapidjson\internal\regex.h" />
-    <ClInclude Include="rapidjson\internal\stack.h" />
-    <ClInclude Include="rapidjson\internal\strfunc.h" />
-    <ClInclude Include="rapidjson\internal\strtod.h" />
-    <ClInclude Include="rapidjson\internal\swap.h" />
-    <ClInclude Include="rapidjson\istreamwrapper.h" />
-    <ClInclude Include="rapidjson\memorybuffer.h" />
-    <ClInclude Include="rapidjson\memorystream.h" />
-    <ClInclude Include="rapidjson\msinttypes\inttypes.h" />
-    <ClInclude Include="rapidjson\msinttypes\stdint.h" />
-    <ClInclude Include="rapidjson\ostreamwrapper.h" />
-    <ClInclude Include="rapidjson\pointer.h" />
-    <ClInclude Include="rapidjson\prettywriter.h" />
-    <ClInclude Include="rapidjson\rapidjson.h" />
-    <ClInclude Include="rapidjson\reader.h" />
-    <ClInclude Include="rapidjson\schema.h" />
-    <ClInclude Include="rapidjson\stream.h" />
-    <ClInclude Include="rapidjson\stringbuffer.h" />
-    <ClInclude Include="rapidjson\writer.h" />
     <ClInclude Include="Reader.h" />
     <ClInclude Include="Sender.h" />
+    <ClInclude Include="ServerMonitor.h" />
+    <ClInclude Include="ServerString.h" />
+    <ClInclude Include="ServiceMgr.h" />
     <ClInclude Include="Singleton.h" />
-    <ClInclude Include="SpinLock.h" />
+    <ClInclude Include="Sort.h" />
+    <ClInclude Include="SR.h" />
+    <ClInclude Include="src\nn.hpp" />
+    <ClInclude Include="ThreadLock.h" />
+    <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="TimeValue.h" />
-    <ClInclude Include="zeromq\zmq.h" />
-    <ClInclude Include="zeromq\zmq_utils.h" />
+    <ClInclude Include="Watch.h" />
+    <ClInclude Include="zeromq\TestAPI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseStruct.cpp" />
+    <ClCompile Include="BaseUnit.cpp" />
+    <ClCompile Include="ConfigStruct.cpp" />
     <ClCompile Include="DebugServer.cpp" />
+    <ClCompile Include="FrameworkMgr.cpp" />
     <ClCompile Include="GameConfig.cpp" />
+    <ClCompile Include="GateMonitor.cpp" />
+    <ClCompile Include="GateService.cpp" />
+    <ClCompile Include="GateUnit.cpp" />
+    <ClCompile Include="LogicService.cpp" />
     <ClCompile Include="LuaMonitor.cpp" />
-    <ClCompile Include="lua\src\lapi.c" />
-    <ClCompile Include="lua\src\lauxlib.c" />
-    <ClCompile Include="lua\src\lbaselib.c" />
-    <ClCompile Include="lua\src\lbitlib.c" />
-    <ClCompile Include="lua\src\lcode.c" />
-    <ClCompile Include="lua\src\lcorolib.c" />
-    <ClCompile Include="lua\src\lctype.c" />
-    <ClCompile Include="lua\src\ldblib.c" />
-    <ClCompile Include="lua\src\ldebug.c" />
-    <ClCompile Include="lua\src\ldo.c" />
-    <ClCompile Include="lua\src\ldump.c" />
-    <ClCompile Include="lua\src\lfunc.c" />
-    <ClCompile Include="lua\src\lgc.c" />
-    <ClCompile Include="lua\src\linit.c" />
-    <ClCompile Include="lua\src\liolib.c" />
-    <ClCompile Include="lua\src\llex.c" />
-    <ClCompile Include="lua\src\lmathlib.c" />
-    <ClCompile Include="lua\src\lmem.c" />
-    <ClCompile Include="lua\src\loadlib.c" />
-    <ClCompile Include="lua\src\lobject.c" />
-    <ClCompile Include="lua\src\lopcodes.c" />
-    <ClCompile Include="lua\src\loslib.c" />
-    <ClCompile Include="lua\src\lparser.c" />
-    <ClCompile Include="lua\src\lstate.c" />
-    <ClCompile Include="lua\src\lstring.c" />
-    <ClCompile Include="lua\src\lstrlib.c" />
-    <ClCompile Include="lua\src\ltable.c" />
-    <ClCompile Include="lua\src\ltablib.c" />
-    <ClCompile Include="lua\src\ltm.c" />
-    <ClCompile Include="lua\src\lua.c" />
-    <ClCompile Include="lua\src\luac.c" />
-    <ClCompile Include="lua\src\lundump.c" />
-    <ClCompile Include="lua\src\lutf8lib.c" />
-    <ClCompile Include="lua\src\lvm.c" />
-    <ClCompile Include="lua\src\lzio.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="message\ProtoInner001.pb.cc" />
+    <ClCompile Include="ServerMonitor.cpp" />
+    <ClCompile Include="ServiceMgr.cpp" />
+    <ClCompile Include="Sort.cpp" />
+    <ClCompile Include="SR.cpp" />
+    <ClCompile Include="ThreadPool.cpp" />
     <ClCompile Include="TimeValue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="config\server\machine.json" />
     <None Include="config\server\special_debug.json" />
     <None Include="test.lua" />
   </ItemGroup>
@@ -150,7 +152,7 @@
     <ProjectGuid>{C0F29682-861E-416D-A0BE-40383C00807A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>server</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -212,20 +214,21 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CONSOLE;GLOG_STL_LOGGING_FOR_UNORDERED;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;WIN32_LEAN_AND_MEAN;_ENABLE_EXTENDED_ALIGNED_STORAGE;NN_HAVE_WINDOWS;NN_USE_WINSOCK;_CRT_SECURE_NO_WARNINGS;NN_ALLOC_MONITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>./zeromq;./lua\src;./rapidjson;H:\VsProject\protobuf-3.6.1\src;./message;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./3rd/glog;./3rd;./3rd/lua/src;./3rd/rapidjson;./message;./3rd/nanomsg/src;./src;./;./3rd/google;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ShowProgress>NotSet</ShowProgress>
-      <AdditionalDependencies>libprotobufd.lib;libzmq.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobufd.lib;nanomsg.lib;glogd.lib;libprotocd.lib;Theron.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

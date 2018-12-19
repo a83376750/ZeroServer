@@ -1,78 +1,81 @@
 #pragma once
 
-#include "zmq.h"
 #include "Header.h"
 
-class Connector 
+namespace SERVER_NET
 {
-public:
-	enum ConnectType
+	class Connector
 	{
-		CONNECT_TCP = 1,
-		CONNECT_UDP
+	public:
+		enum ConnectType
+		{
+			CONNECT_TCP = 1,
+			CONNECT_UDP
+		};
+
+		Connector();
+		virtual ~Connector();
+
+		int CreateDetail(int type, const char *ip, int port);
+		virtual int SetOpt(int sock_opt, void *opt_sub, int opt_size);
+		virtual int ConnectSvc(int type);
+	private:
+		int connect_type_;
+		std::string address_;
+
+	protected:
+		void *socket_;
+		static void* context_;
 	};
 
-	Connector();
-	virtual ~Connector();
+	void *Connector::context_ = nullptr;
 
-	int create_detail(int type, const char *ip, int port);
-	virtual int set_opt(int sock_opt, void *opt_sub, int opt_size);
-	virtual int connect_svc(int type);
-private:
-	int m_connectType;
-	std::string m_address;
-
-protected:
-	void *m_socket;
-	static void* m_context;
-};
-
-void *Connector::m_context = nullptr;
-
-Connector::Connector()
-{
-	m_connectType = -1;
-}
-
-Connector::~Connector()
-{
-
-}
-
-int Connector::create_detail(int type, const char *ip, int port)
-{
-	JUDGE_RETURN(ip == nullptr || port < 1, -2);
-	if(m_context == nullptr)
-		m_context = zmq_ctx_new();
-
-	char address[256] = "\0";
-	switch (type)
+	Connector::Connector()
 	{
-		case ConnectType::CONNECT_TCP:
-		{
-			sprintf_s(address, "tcp://%s:%d", ip, port);
-			break;
-		}
-		case ConnectType::CONNECT_UDP:
-		{
-			sprintf_s(address, "upd://%s:%d", ip, port);
-			break;
-		}
+		connect_type_ = -1;
 	}
 
-	m_address.clear();
-	m_address.append(address);
-	return 0;
-}
+	Connector::~Connector()
+	{
 
-int Connector::set_opt(int sock_opt, void *opt_sub, int opt_size)
-{
-	JUDGE_RETURN(m_socket == nullptr, -1);
-	return zmq_setsockopt(m_socket, sock_opt, opt_sub, opt_size);
-}
+	}
 
-int Connector::connect_svc(int type)
-{
-	printf("error base class:%d", type);
-	return -1;
+	int Connector::CreateDetail(int type, const char *ip, int port)
+	{
+// 		JUDGE_RETURN(ip == nullptr || port < 1, -2);
+// 		if (context_ == nullptr)
+// 			context_ = zmq_ctx_new();
+// 
+// 		char address[256] = "\0";
+// 		switch (type)
+// 		{
+// 		case ConnectType::CONNECT_TCP:
+// 		{
+// 			sprintf_s(address, "tcp://%s:%d", ip, port);
+// 			break;
+// 		}
+// 		case ConnectType::CONNECT_UDP:
+// 		{
+// 			sprintf_s(address, "upd://%s:%d", ip, port);
+// 			break;
+// 		}
+// 		}
+// 
+// 		address_.clear();
+// 		address_.append(address);
+		return 0;
+	}
+
+	int Connector::SetOpt(int sock_opt, void *opt_sub, int opt_size)
+	{
+// 		JUDGE_RETURN(socket_ == nullptr, -1);
+// 		return zmq_setsockopt(socket_, sock_opt, opt_sub, opt_size);
+		return 0;
+	}
+
+	int Connector::ConnectSvc(int type)
+	{
+		printf("error base class:%d", type);
+		return -1;
+	}
 }

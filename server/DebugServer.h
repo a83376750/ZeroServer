@@ -1,15 +1,22 @@
 #pragma once
 #include "Singleton.h"
 
+class ThreadPool;
 class DebugServer
 {
 public:
 	DebugServer();
 	~DebugServer();
 
-	void Init();
-	void Start();
+	void init();
+	void start();
+
+	void loop();
+
+private:
+	bool is_start_;
+	bool is_stop_;
+	ThreadPool *thread_pool_;
 };
 
-typedef Singleton<DebugServer> DebugServerSingle;
-#define DEBUG_SERVER    (DebugServerSingle::instance())
+typedef Singleton<DebugServer> DS;
