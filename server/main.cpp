@@ -274,13 +274,15 @@ void testMalloc()
 	void *sData = getData(p);
 }
 
+void testgLog(char **argv)
+{
+	google::InitGoogleLogging(argv[0]);
+	google::SetLogDestination(google::GLOG_INFO, "./log/");
+}
 
 #include "GateMonitor.h"
 int main(int argc, char **argv)
 {
-	google::InitGoogleLogging(argv[0]);
- 	google::SetLogDestination(google::GLOG_INFO, "./log/");
-
 
 	DS::instance()->init();
 	DS::instance()->start();
