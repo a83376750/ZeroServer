@@ -2,7 +2,8 @@
 
 #include "ObjectPool.h"
 #include "nn.hpp"
-#include "bus.h"
+#include "pair.h"
+#include "survey.h"
 #include "List.h"
 #include "pipeline.h"
 

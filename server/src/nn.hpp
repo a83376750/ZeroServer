@@ -36,6 +36,9 @@
 #define nn_slow(x) (x)
 #endif
 
+
+#define MAX_SOCKET_NAME_LEN 256
+
 class ServiceMgr;
 namespace nn
 {
@@ -184,6 +187,56 @@ namespace nn
 				return -1;
 			}
 			return rc;
+		}
+
+		inline int socketName(std::string &name)
+		{
+			size_t size = MAX_SOCKET_NAME_LEN;
+			char *s_name = new char[size + 1];
+			int rc = nn_getsockopt(s, NN_SOL_SOCKET, NN_SOCKET_NAME, s_name, &size);
+			if (nn_slow(rc < 0)) {
+				if (nn_slow(nn_errno() != EAGAIN))
+					throw nn::exception();
+				return -1;
+			}
+
+			if (s_name == nullptr)
+			{
+				delete[]s_name;
+				return -1;
+			}
+			s_name[size + 1] = '\0';
+			name = s_name;
+			delete[]s_name;
+			return rc;
+		}
+
+		inline int recvfd()
+		{
+			int fd = 0;
+			size_t size = sizeof(fd);
+			int rc = nn_getsockopt(s, NN_SOL_SOCKET, NN_RCVFD, &fd, &size);
+			if (nn_slow(rc < 0)) {
+				if (nn_slow(nn_errno() != EAGAIN))
+					throw nn::exception();
+				return -1;
+			}
+
+			return fd;
+		}
+
+		inline int sendfd()
+		{
+			int fd = 0;
+			size_t size = sizeof(fd);
+			int rc = nn_getsockopt(s, NN_SOL_SOCKET, NN_SNDFD, &fd, &size);
+			if (nn_slow(rc < 0)) {
+				if (nn_slow(nn_errno() != EAGAIN))
+					throw nn::exception();
+				return -1;
+			}
+
+			return fd;
 		}
 
 	private:

@@ -303,59 +303,11 @@
     <ClInclude Include="3rd\glog\vlog_is_on.h">
       <Filter>3rd\glog</Filter>
     </ClInclude>
-    <ClInclude Include="3rd\Theron\Theron.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Actor.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\BasicTypes.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Catcher.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Counters.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\DefaultAllocator.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Defines.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\EndPoint.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Framework.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\IAllocator.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Receiver.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Register.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\ActorRef.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Address.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Align.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\AllocatorManager.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\Theron\Assert.h">
-      <Filter>3rd\Theron</Filter>
-    </ClInclude>
     <ClInclude Include="Monitor.h">
       <Filter>monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nanomsg\src\survey.h">
+      <Filter>3rd\nanomsg</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

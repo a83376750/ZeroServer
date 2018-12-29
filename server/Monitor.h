@@ -17,6 +17,7 @@ public:
 
 class Monitor : public IMonitor
 {
+public:
 	Monitor(const char *name)
 	{
 		

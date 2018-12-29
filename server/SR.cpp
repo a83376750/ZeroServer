@@ -38,18 +38,19 @@ void SERVER_NET::NanoSR::SendService()
 void SERVER_NET::NanoSR::RecvService()
 {
 	char *data = new char[256];
-	ZERO_MEMORY(data, 256);
 	int rc = 0;
 	while (is_stop_.load() == false)
 	{
 		int64_t pre = time(0);
+		ZERO_MEMORY(data, 256);
 		try
 		{
 			rc = s_.recv(data, DEFAULT_BUFF_SIZE, 0);
 		}
 		catch (const nn::exception &a)
 		{
-			std::cerr << "recv service error:" << a.what();
+			//std::cerr << "recv service error:" << a.what();
+			SLEEP(100);
 			continue;
 		}
 		
@@ -64,7 +65,21 @@ void SERVER_NET::NanoSR::RecvService()
 		if (aft - pre > 10)
 			std::cout << "error slow:" << aft - pre << std::endl;
 
-		std::cout << (char*)data << std::endl;
+		std::string name;
+		s_.socketName(name);
+		int rfd = s_.recvfd();
+		int sfd = s_.sendfd();
+
+		size_t rs = MAX_SOCKET_NAME_LEN;
+		char *recvName = new char[MAX_SOCKET_NAME_LEN + 1];
+		ZERO_MEMORY(recvName, MAX_SOCKET_NAME_LEN + 1);
+		int rc = nn_getsockopt(sfd, NN_SOL_SOCKET, NN_SOCKET_NAME, recvName, &rs);
+		int eno = nn_errno();
+		std::cout << "rc:" << rc << " error:" << eno <<" str:" << nn_strerror(eno)<< " recvName:" << recvName << std::endl;
+		std::cout << "name:" << name << 
+			" rfd:" << rfd <<
+			" sfd:" << sfd <<
+			" data:" << (char*)data << std::endl;
 
 		while (l_ptr_->size() > 1000)
 		{
@@ -72,7 +87,7 @@ void SERVER_NET::NanoSR::RecvService()
 			std::cerr << "msgList is full sleep ....." << std::endl;
 		}
 
-		l_ptr_->push_back(std::move(&DynaObj(data, rc)));
+		//l_ptr_->push_back(std::move(&DynaObj(data, rc)));
 	}
 
 	if (data != nullptr)

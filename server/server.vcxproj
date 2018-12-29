@@ -32,6 +32,7 @@
     <ClInclude Include="3rd\nanomsg\src\nn.h" />
     <ClInclude Include="3rd\nanomsg\src\pair.h" />
     <ClInclude Include="3rd\nanomsg\src\pipeline.h" />
+    <ClInclude Include="3rd\nanomsg\src\survey.h" />
     <ClInclude Include="3rd\nanomsg\src\tcp.h" />
     <ClInclude Include="3rd\rapidjson\allocators.h" />
     <ClInclude Include="3rd\rapidjson\cursorstreamwrapper.h" />
