@@ -3,7 +3,7 @@
 
 using namespace SERVER_NET;
 GateClientService::GateClientService()
-	:client_sr_(AF_SP, NN_SURVEYOR)
+	:client_sr_(AF_SP, NN_RESPONDENT)
 {
 	char socket_addr[128] = "\0";
 	ServerDetail detail;
@@ -12,7 +12,7 @@ GateClientService::GateClientService()
 	try
 	{
 		client_sr_.bind(socket_addr);
-		printf("%s_%d", detail.address.c_str(), detail.out_port);
+		printf("%s:%d\n", detail.address.c_str(), detail.out_port);
 	}
 	catch (const nn::exception &a)
 	{
