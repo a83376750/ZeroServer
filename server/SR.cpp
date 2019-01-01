@@ -49,14 +49,14 @@ void SERVER_NET::NanoSR::RecvService()
 		}
 		catch (const nn::exception &a)
 		{
-			//std::cerr << "recv service error:" << a.what();
-			SLEEP(100);
+			std::cerr << "recv service error:" << a.what() << std::endl;
+			SLEEP(10000);
 			continue;
 		}
 		
 		if (rc <= 0)
 		{
-			SLEEP(100);
+			SLEEP(10000);
 			continue;
 		}
 
