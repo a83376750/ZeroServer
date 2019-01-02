@@ -1,19 +1,11 @@
 #pragma once
 
 #include "ObjectPool.h"
-#include "nn.hpp"
-#include "pair.h"
-#include "survey.h"
+#include "nng.h"
 #include "List.h"
-#include "pipeline.h"
-
 #include <mutex>
 
 
-namespace nn {
-	class socket;
-}
-typedef nn::socket n_socket;
 class ServiceMgr;
 class BaseUnit;
 namespace SERVER_NET
@@ -43,7 +35,7 @@ namespace SERVER_NET
 		int connect(const char *addr);
 
 	private:
-		n_socket s_;
+		nng_socket s_;
 		std::atomic_bool is_stop_;
 		TmpList<DynaObj, std::mutex> *l_ptr_;
 	};

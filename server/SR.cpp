@@ -6,7 +6,6 @@
 
 ///////////////////////////NanoSR///////////////////////////////////////
 SERVER_NET::NanoSR::NanoSR(int domain, int protocol)
-	:s_(domain, protocol)
 {
 	l_ptr_ = new TmpList<DynaObj, std::mutex>();
 }

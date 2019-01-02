@@ -3,7 +3,6 @@
 
 using namespace SERVER_NET;
 GateClientService::GateClientService()
-	:client_sr_(AF_SP, NN_RESPONDENT)
 {
 	char socket_addr[128] = "\0";
 	ServerDetail detail;

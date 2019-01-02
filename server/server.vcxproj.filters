@@ -43,9 +43,6 @@
     <Filter Include="3rd\glog">
       <UniqueIdentifier>{7caeca05-1596-49a6-9fae-8a5545f6270d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3rd\nanomsg">
-      <UniqueIdentifier>{83184765-360c-43e7-b288-e53f03773c31}</UniqueIdentifier>
-    </Filter>
     <Filter Include="3rd\rapidjson">
       <UniqueIdentifier>{feb49eff-1eae-4dce-8d8c-8710d7da3778}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,9 @@
     </Filter>
     <Filter Include="3rd\Theron">
       <UniqueIdentifier>{8c01fac8-e613-4e09-b229-0f599496948c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\nng">
+      <UniqueIdentifier>{83184765-360c-43e7-b288-e53f03773c31}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -219,29 +219,11 @@
     <ClInclude Include="3rd\rapidjson\writer.h">
       <Filter>3rd\rapidjson</Filter>
     </ClInclude>
-    <ClInclude Include="3rd\nanomsg\src\nn.h">
-      <Filter>3rd\nanomsg</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\nanomsg\src\tcp.h">
-      <Filter>3rd\nanomsg</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\nanomsg\src\pair.h">
-      <Filter>3rd\nanomsg</Filter>
-    </ClInclude>
-    <ClInclude Include="src\nn.hpp">
-      <Filter>3rd\nanomsg</Filter>
-    </ClInclude>
     <ClInclude Include="Watch.h">
       <Filter>seriver</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
       <Filter>struct</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\nanomsg\src\bus.h">
-      <Filter>3rd\nanomsg</Filter>
-    </ClInclude>
-    <ClInclude Include="3rd\nanomsg\src\pipeline.h">
-      <Filter>3rd\nanomsg</Filter>
     </ClInclude>
     <ClInclude Include="ActorMonitor.h">
       <Filter>monitor</Filter>
@@ -306,8 +288,17 @@
     <ClInclude Include="Monitor.h">
       <Filter>monitor</Filter>
     </ClInclude>
-    <ClInclude Include="3rd\nanomsg\src\survey.h">
-      <Filter>3rd\nanomsg</Filter>
+    <ClInclude Include="3rd\nng\nng.h">
+      <Filter>3rd\nng</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nng\transport\tcp\tcp.h">
+      <Filter>3rd\nng</Filter>
+    </ClInclude>
+    <ClInclude Include="3rd\nng\transport\inproc\inproc.h">
+      <Filter>3rd\nng</Filter>
+    </ClInclude>
+    <ClInclude Include="nngcpp.h">
+      <Filter>3rd\nng</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -362,6 +353,9 @@
     </ClCompile>
     <ClCompile Include="ServiceMgr.cpp">
       <Filter>seriver</Filter>
+    </ClCompile>
+    <ClCompile Include="nngcpp.cpp">
+      <Filter>3rd\nng</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

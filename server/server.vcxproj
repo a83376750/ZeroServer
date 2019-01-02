@@ -28,12 +28,9 @@
     <ClInclude Include="3rd\lua\src\lua.h" />
     <ClInclude Include="3rd\lua\src\luaconf.h" />
     <ClInclude Include="3rd\lua\src\lualib.h" />
-    <ClInclude Include="3rd\nanomsg\src\bus.h" />
-    <ClInclude Include="3rd\nanomsg\src\nn.h" />
-    <ClInclude Include="3rd\nanomsg\src\pair.h" />
-    <ClInclude Include="3rd\nanomsg\src\pipeline.h" />
-    <ClInclude Include="3rd\nanomsg\src\survey.h" />
-    <ClInclude Include="3rd\nanomsg\src\tcp.h" />
+    <ClInclude Include="3rd\nng\nng.h" />
+    <ClInclude Include="3rd\nng\transport\inproc\inproc.h" />
+    <ClInclude Include="3rd\nng\transport\tcp\tcp.h" />
     <ClInclude Include="3rd\rapidjson\allocators.h" />
     <ClInclude Include="3rd\rapidjson\cursorstreamwrapper.h" />
     <ClInclude Include="3rd\rapidjson\document.h" />
@@ -88,6 +85,7 @@
     <ClInclude Include="LuaMonitor.h" />
     <ClInclude Include="message\ProtoInner001.pb.h" />
     <ClInclude Include="MsgDefine.h" />
+    <ClInclude Include="nngcpp.h" />
     <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="Reader.h" />
     <ClInclude Include="Sender.h" />
@@ -97,7 +95,6 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="SR.h" />
-    <ClInclude Include="src\nn.hpp" />
     <ClInclude Include="ThreadLock.h" />
     <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="TimeValue.h" />
@@ -117,6 +114,7 @@
     <ClCompile Include="LuaMonitor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="message\ProtoInner001.pb.cc" />
+    <ClCompile Include="nngcpp.cpp" />
     <ClCompile Include="ServerMonitor.cpp" />
     <ClCompile Include="ServiceMgr.cpp" />
     <ClCompile Include="Sort.cpp" />
@@ -201,7 +199,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_SCL_SECURE_NO_WARNINGS;_CONSOLE;GLOG_STL_LOGGING_FOR_UNORDERED;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;WIN32_LEAN_AND_MEAN;_ENABLE_EXTENDED_ALIGNED_STORAGE;NN_HAVE_WINDOWS;NN_USE_WINSOCK;_CRT_SECURE_NO_WARNINGS;NN_ALLOC_MONITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>./3rd/glog;./3rd;./3rd/lua/src;./3rd/rapidjson;./message;./3rd/nanomsg/src;./src;./;./3rd/google;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./3rd/glog;./3rd;./3rd/lua/src;./3rd/rapidjson;./message;./3rd/nanomsg/src;./src;./;./3rd/google;./3rd/nng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -209,7 +207,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ShowProgress>NotSet</ShowProgress>
-      <AdditionalDependencies>libprotobufd.lib;nanomsg.lib;glogd.lib;libprotocd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobufd.lib;glogd.lib;libprotocd.lib;nng.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>./lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
